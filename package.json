@@ -1,0 +1,19 @@
+{
+  "name": "ninghao-react",
+  "version": "1.0.0",
+  "description": "react   react-router",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mannysys/ninghao-react.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mannysys/ninghao-react/issues"
+  },
+  "homepage": "https://github.com/mannysys/ninghao-react#readme"
+}
