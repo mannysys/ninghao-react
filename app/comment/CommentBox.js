@@ -13,12 +13,24 @@ class CommentBox extends React.Component{
             data: []
         };
 
-        $.ajax({
+        this.getComments();
+        // setInterval(() => this.getComments(), 5000);
+    }
+
+    // 处理提交表单的数据
+    handleCommentSubmit(comment){
+        let comments = this.state.data,
+            newComments = comments.concat(comment); // concat是连接两个或多个数组
+
+        this.setState({data: newComments});    
+    }
+
+    getComments(){
+         $.ajax({
             url: this.props.url,
             dataType: 'json',
-            cache: false,
+            cache: false, 
             success: comments => {
-                console.log(comments);
                 this.setState({data: comments});
             },
             error: (xhr, status, error) => {
@@ -33,7 +45,7 @@ class CommentBox extends React.Component{
                 <h1>评论</h1>
                 <div className="ui divider"></div>
                 <CommentList data={this.state.data}/>
-                <CommentForm />
+                <CommentForm onCommentSubmit={this.handleCommentSubmit.bind(this)} />
             </div>
         );
 
